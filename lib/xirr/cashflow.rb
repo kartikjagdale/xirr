@@ -156,7 +156,6 @@ module Xirr
     def multiple
       # inflow.sum(&:amount).abs / outflows.sum(&:amount).abs
       # New Fixed Logic
-      inflow.sum(&:amount).abs / outflows.sum(&:amount).abs
       outflows_res = outflows.map{|v| sum = +v.send(:amount)}.sum.abs
       inflows_res  = inflow.map{|v| sum = +v.send(:amount)}.sum.abs
       inflows_res / outflows_res
